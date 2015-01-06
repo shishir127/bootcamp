@@ -7,6 +7,6 @@ class Line
 	end
 
 	def length
-		Math.sqrt((x1-x2)**2 + (y1-y2)**2)
+		Math.sqrt((@x1-@x2)**2 + (@y1-@y2)**2)
 	end
 end

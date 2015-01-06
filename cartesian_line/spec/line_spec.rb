@@ -1,4 +1,4 @@
-require './spec_helper'
+require 'spec_helper'
 
 describe Line, "#length" do
 	it "returns length" do
