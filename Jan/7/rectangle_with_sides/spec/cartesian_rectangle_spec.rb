@@ -20,6 +20,5 @@ describe CartesianRectangle do
 
 	it "calculates the area of the rectangle" do 
 		expect(rectangle.area).to eq(2.0)
-	end
-	
+	end 
 end
