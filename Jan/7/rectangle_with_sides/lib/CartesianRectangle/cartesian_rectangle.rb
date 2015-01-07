@@ -1,17 +1,24 @@
 require 'rectangle.rb'
 
 class CartesianRectangle
-	def initialize(width, height)
-		@width = width
-		@height = height
+	def initialize(side_a, side_b)
+		@sideA = side_a
+		@sideB = side_b
+	end
+
+	def width
+		@sideA.length
+	end
+
+	def height
+		@sideB.length
 	end
 
 	def perimeter
-		2*(@width+@height)
+		2*(width+height)
 	end
 
 	def area
-		@width*@height
+		width*height
 	end
-
 end

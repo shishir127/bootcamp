@@ -1,6 +1,5 @@
 require 'rectangle.rb'
 
-#models a line
 class Line
 	attr_reader :start,:end
 	def initialize(point1, point2)

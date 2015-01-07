@@ -48,14 +48,6 @@ describe Point do
 		expect(@point.distance(point2)).to be Math.sqrt(2)
 	end
 
-	it "raises exception when the argument in #distance is nil" do
-		expect(@point.distance(nil)).to raise_error
-	end
-
-	it "raises exception when the argument in #distance is not a Point" do
-		expect(@point.distance(1.0)).to raise_error
-	end
-
 	it "calculates the distance between another point along the X axis" do
 		point2 = Point.new(@point.x+2, @point.y)
 		expect(@point.x_distance(point2)).to eq(2.0)
