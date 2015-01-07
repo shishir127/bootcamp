@@ -15,7 +15,14 @@ class Point
 	end
 
 	def distance(point)
-		# raise "WrongObjectError" unless point.is_a?(Point)
 		Math.sqrt((@x-point.x)**2 + (@y-point.y)**2)
+	end
+
+	def x_distance(point)
+		(@x-point.x).abs
+	end
+
+	def y_distance(point)
+		(@y-point.y).abs
 	end
 end
