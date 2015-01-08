@@ -1,24 +1,15 @@
 module Geometry
   class Rectangle
-    def initialize(side_a, side_b)
-      @sideA = side_a
-      @sideB = side_b
-    end
-
-    def width
-      @sideA.length
-    end
-
-    def height
-      @sideB.length
+    def initialize(*sides)
+      @sides = sides
     end
 
     def perimeter
-      2 * (width + height)
+      2 * @sides.inject(0){|sum, side| sum + side.length}
     end
 
     def area
-      width * height
+      @sides.inject(1){|product, side| product * side.length}
     end
   end
 end
