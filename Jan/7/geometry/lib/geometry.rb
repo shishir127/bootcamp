@@ -1,4 +1,4 @@
-require_relative 'CartesianRectangle/cartesian_rectangle'
-require_relative 'Line/line'
-require_relative 'Point/point'
-require_relative 'Square/square'
+require_relative 'geometry/rectangle'
+require_relative 'geometry/line'
+require_relative 'geometry/point'
+require_relative 'geometry/square'

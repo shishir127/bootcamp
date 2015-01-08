@@ -1,6 +1,6 @@
 require 'geometry.rb'
 
-class CartesianRectangle
+class Rectangle
 	def initialize(side_a, side_b)
 		@sideA = side_a
 		@sideB = side_b

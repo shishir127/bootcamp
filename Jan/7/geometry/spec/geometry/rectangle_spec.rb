@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe CartesianRectangle do
+describe Rectangle do
 
 	let(:width) {Line.new(Point.new(0,0), Point.new(2,0))}
 	let(:height) {Line.new(Point.new(0,0), Point.new(0,1))}
-	let(:rectangle) {CartesianRectangle.new(width, height)}
+	let(:rectangle) {Rectangle.new(width, height)}
 
 	it "calculates the width of the rectangle" do
 		expect(rectangle.width).to eq(2.0)

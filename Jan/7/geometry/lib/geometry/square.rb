@@ -2,7 +2,7 @@ require 'geometry.rb'
 
 class Square
 	def initialize(side)
-		@rect = CartesianRectangle.new(side, side)
+		@rect = Rectangle.new(side, side)
 	end
 
 	def area
