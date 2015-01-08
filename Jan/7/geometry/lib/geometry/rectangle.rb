@@ -1,12 +1,12 @@
 module Geometry
   class Rectangle
     def initialize(side_a, side_b)
-      @side_a = side_a
+      @sideA = side_a
       @sideB = side_b
     end
 
     def width
-      @side_a.length
+      @sideA.length
     end
 
     def height
