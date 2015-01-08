@@ -8,4 +8,8 @@ describe Geometry::Square do
 	it "calculates area of the square" do
 		expect(square.area).to eq(4.0)
 	end
+
+  it "calculates the perimeter of the square" do
+    expect(square.perimeter).to eq(8.0)
+  end
 end

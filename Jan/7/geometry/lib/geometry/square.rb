@@ -1,11 +1,15 @@
 module Geometry
-  class Square
+  class Square < Geometry::Rectangle
     def initialize(side)
-      @rect = Rectangle.new(side, side)
+      @side = side
     end
 
-    def area
-      @rect.area
+    def width
+      @side.length
+    end
+
+    def height
+      @side.length
     end
   end
 end
