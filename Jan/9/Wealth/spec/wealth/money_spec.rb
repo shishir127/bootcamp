@@ -19,9 +19,9 @@ describe Wealth::Money do
     expect(wealth_rogue_input.amountInRupees).to eq(125.33)
   end
 
-  # it "raise exception for negative amounts" do
-  #   expect(Wealth::Money.new(-123.45)).to raise_error
-  # end
+  it "raise exception for negative amounts" do
+    expect{Wealth::Money.new(-123.45)}.to raise_error
+  end
 
   it "displays the reflexive property of equality" do
     expect(wealth1 == wealth1).to be true

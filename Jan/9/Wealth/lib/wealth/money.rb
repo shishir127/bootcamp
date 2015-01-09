@@ -3,6 +3,7 @@ module Wealth
   class Money
     attr_reader :rupees, :paisa
     def initialize(rupees=0, paisa=0)
+      raise if (rupees < 0 or paisa < 0)
       @rupees = rupees.to_i
       @paisa = paisa.to_i
       truncate
