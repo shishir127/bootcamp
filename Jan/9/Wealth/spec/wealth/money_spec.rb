@@ -1,7 +1,7 @@
-require 'spec_helper'
+ require 'spec_helper'
 
 describe Wealth::Money do
-  let(:wealth1) { Wealth::Money.new(123, 45) }
+        let(:wealth1) { Wealth::Money.new(123, 45) }
   let(:wealth2) { Wealth::Money.new(987, 65) }
   let(:wealth3) { Wealth::Money.new(912, 83) }
   let(:wealth1_duplicate) { Wealth::Money.new(wealth1.rupees, wealth1.paisa) }
@@ -19,16 +19,12 @@ describe Wealth::Money do
     expect(wealth_rogue_input.amountInRupees).to eq(125.33)
   end
 
-  it "raise exception for negative amounts" do
-    expect{Wealth::Money.new(-123.45)}.to raise_error
-  end
-
   it "displays the reflexive property of equality" do
-    expect(wealth1 == wealth1).to be true
+    expect(wealth1).to eq(wealth1)
   end
 
   it "displays the symmetric property of equality" do
-    expect(wealth1 == wealth1_duplicate).to be true
+    expect(wealth1).to eq(wealth1_duplicate)
   end
 
   it "displays the transitive property of equality" do

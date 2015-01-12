@@ -3,13 +3,12 @@ module Wealth
   class Money
     attr_reader :rupees, :paisa
     def initialize(rupees=0, paisa=0)
-      raise if (rupees < 0 or paisa < 0)
       @rupees = rupees.to_i
       @paisa = paisa.to_i
-      truncate
+      addOverflowFromPaisaToRupees
     end
 
-    def truncate
+    def addOverflowFromPaisaToRupees
       @rupees += (@paisa / 100)
       @paisa %= 100
     end
@@ -20,7 +19,7 @@ module Wealth
 
     def amountInPaisa()
       (100 * @rupees) + @paisa
-    end
+    end 
 
     def +(money)
       Money.new(@rupees + money.rupees, @paisa + money.paisa)
