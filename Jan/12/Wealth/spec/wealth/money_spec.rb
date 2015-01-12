@@ -1,4 +1,8 @@
 require 'spec_helper'
+require 'logger'
+
+# $LOG = Logger.new(STDOUT)
+# $LOG.level = Logger::DEBUG
 
 describe Wealth::Money do
   let(:wealth1) { Wealth::Money.new(123, 45) }
@@ -8,15 +12,16 @@ describe Wealth::Money do
   let(:wealth_rogue_input) { Wealth::Money.new(123, 233) }
 
   it "gets the amount in rupees" do
-    expect(wealth1.amountInRupees).to eq(123.45)
+    # $LOG.debug { "wealth1.amount_in_rupees = " + wealth1.amount_in_rupees.to_s }
+    expect(wealth1.amount_in_rupees).to eq(123.45)
   end
 
   it "gets the amount in paisa" do
-    expect(wealth1.amountInPaisa).to eq(12345)
+    expect(wealth1.amount_in_paisa).to eq(12345)
   end
 
   it "adjusts for more than 2 precision inputs for paisa" do
-    expect(wealth_rogue_input.amountInRupees).to eq(125.33)
+    expect(wealth_rogue_input.amount_in_rupees).to eq(125.33)
   end
 
   it "displays the reflexive property of equality" do
@@ -37,7 +42,7 @@ describe Wealth::Money do
   end
 
   it "adds two amounts of money" do
-    expect((wealth1 + wealth2).amountInRupees).to eq(1111.1)
+    expect((wealth1 + wealth2).amount_in_rupees).to eq(1111.1)
   end
 
   it "displays the commutative property of addition" do
@@ -49,15 +54,15 @@ describe Wealth::Money do
   end
 
   it "gives the difference between two amounts of money" do
-    expect((wealth2 - wealth1).amountInRupees).to eq(864.2)
+    expect((wealth2 - wealth1).amount_in_rupees).to eq(864.2)
   end
 
   it "gives a negative amount when a bigger amount is subtracted from a smaller amount" do 
-    expect((wealth1 - wealth2).amountInRupees).to eq(-864.2)
+    expect((wealth1 - wealth2).amount_in_rupees).to eq(-864.2)
   end
 
   # it "gives a positive amount when a negative amount is subtracted" do
-  #   expect((wealth1 - Wealth::Money.new(-987, -65)).amountInRupees).to eq(1111.1)
+  #   expect((wealth1 - Wealth::Money.new(-987, -65)).amount_in_rupees).to eq(1111.1)
   # end
 
   it "subtraction of money is not commutative" do
@@ -76,3 +81,5 @@ describe Wealth::Money do
     expect(wealth1.hash).to eq(wealth1_duplicate.hash)
   end
 end
+
+# $LOG.close
