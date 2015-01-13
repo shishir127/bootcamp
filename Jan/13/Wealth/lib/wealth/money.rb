@@ -28,5 +28,9 @@ module Wealth
     def hash
       [@rupees, @paisa].hash
     end
+
+    def to_s
+      (@paisa / 100).to_s + " rupees, " + (@paisa % 100).to_s + " paisa"
+    end
   end
 end
