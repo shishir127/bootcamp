@@ -28,13 +28,5 @@ module Wealth
     def hash
       [@rupees, @paisa].hash
     end
-
-    def output_in_rupees 
-      @formatter.rupee_output(amount_in_rupees)
-    end
-
-    def output_in_paisa
-      @formatter.paisa_output(amount_in_paisa)
-    end
   end
 end
