@@ -1,9 +1,6 @@
 require 'spec_helper'
 require 'logger'
 
-# $LOG = Logger.new(STDOUT)
-# $LOG.level = Logger::DEBUG
-
 describe Wealth::Money do
   let(:wealth1) { Wealth::Money.new(123, 45) }
   let(:wealth2) { Wealth::Money.new(987, 65) }
@@ -12,7 +9,6 @@ describe Wealth::Money do
   let(:wealth_rogue_input) { Wealth::Money.new(123, 233) }
 
   it "gets the amount in rupees" do
-    # $LOG.debug { "wealth1.amount_in_rupees = " + wealth1.amount_in_rupees.to_s }
     expect(wealth1.amount_in_rupees).to eq(123.45)
   end
 
@@ -57,7 +53,7 @@ describe Wealth::Money do
     expect((wealth2 - wealth1).amount_in_rupees).to eq(864.2)
   end
 
-  it "gives a negative amount when a bigger amount is subtracted from a smaller amount" do 
+  it "gives a negative amount when a bigger amount is subtracted from a smaller amount" do
     expect((wealth1 - wealth2).amount_in_rupees).to eq(-864.2)
   end
 
@@ -76,6 +72,12 @@ describe Wealth::Money do
   it "two objects with the same fields have the same hash" do
     expect(wealth1.hash).to eq(wealth1_duplicate.hash)
   end
-end
 
-# $LOG.close
+  it "returns sum in rupees in the required format" do
+    expect(wealth1.output_in_rupees).to eq("Sum = Rs. 123.45")
+  end
+
+  it "returns sum in paisa in the required format" do
+    expect(wealth1.output_in_paisa).to eq("Sum = 12345 paisa")
+  end
+end

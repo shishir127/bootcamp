@@ -1,17 +1,15 @@
 module Wealth
   class MoneyFormatter
 
-    def initialize(money)
-      @money = money
-      @format = "Sum = "
+    def initialize
     end
 
-    def output_in_rupees
-      @format + "Rs. " + @money.amount_in_rupees.to_s
+    def rupee_output(money)
+      "Sum = Rs. " + money.to_s
     end
 
-    def output_in_paisa
-      @format + @money.amount_in_paisa.to_s + " paisa"
+    def paisa_output(money)
+      "Sum = " + money.to_s + " paisa"
     end
 
   end

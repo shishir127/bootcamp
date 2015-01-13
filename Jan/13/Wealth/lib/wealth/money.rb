@@ -3,6 +3,7 @@ module Wealth
   class Money
     def initialize(rupees=0, paisa=0)
       @paisa = paisa.to_i + rupees.to_i * 100
+      @formatter = Wealth::MoneyFormatter.new()
     end
 
     def amount_in_rupees
@@ -27,6 +28,14 @@ module Wealth
 
     def hash
       [@rupees, @paisa].hash
+    end
+
+    def output_in_rupees 
+      @formatter.rupee_output(amount_in_rupees)
+    end
+
+    def output_in_paisa
+      @formatter.paisa_output(amount_in_paisa)
     end
   end
 end
