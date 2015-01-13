@@ -72,12 +72,4 @@ describe Wealth::Money do
   it "two objects with the same fields have the same hash" do
     expect(wealth1.hash).to eq(wealth1_duplicate.hash)
   end
-
-  it "returns sum in rupees in the required format" do
-    expect(wealth1.output_in_rupees).to eq("Sum = Rs. 123.45")
-  end
-
-  it "returns sum in paisa in the required format" do
-    expect(wealth1.output_in_paisa).to eq("Sum = 12345 paisa")
-  end
 end
