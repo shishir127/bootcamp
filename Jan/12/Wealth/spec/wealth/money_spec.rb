@@ -8,7 +8,7 @@ describe Wealth::Money do
   let(:wealth1) { Wealth::Money.new(123, 45) }
   let(:wealth2) { Wealth::Money.new(987, 65) }
   let(:wealth3) { Wealth::Money.new(912, 83) }
-  let(:wealth1_duplicate) { Wealth::Money.new(wealth1.rupees, wealth1.paisa) }
+  let(:wealth1_duplicate) { Wealth::Money.new(0, wealth1.amount_in_paisa) }
   let(:wealth_rogue_input) { Wealth::Money.new(123, 233) }
 
   it "gets the amount in rupees" do
@@ -33,7 +33,7 @@ describe Wealth::Money do
   end
 
   it "displays the transitive property of equality" do
-    wealth1_duplicate2 = Wealth::Money.new(wealth1.rupees, wealth1.paisa)
+    wealth1_duplicate2 = Wealth::Money.new(0, wealth1.amount_in_paisa)
     expect((wealth1 == wealth1_duplicate2) && (wealth1_duplicate2 == wealth1_duplicate) && (wealth1 == wealth1_duplicate)).to be true
   end
 
@@ -61,10 +61,6 @@ describe Wealth::Money do
     expect((wealth1 - wealth2).amount_in_rupees).to eq(-864.2)
   end
 
-  # it "gives a positive amount when a negative amount is subtracted" do
-  #   expect((wealth1 - Wealth::Money.new(-987, -65)).amount_in_rupees).to eq(1111.1)
-  # end
-
   it "subtraction of money is not commutative" do
     expect(wealth1 - wealth2).not_to eq(wealth2 -  wealth1)
   end
@@ -74,7 +70,7 @@ describe Wealth::Money do
   end
 
   it "subtracting an amount from 0 results in the negative of the amount" do
-    expect(Wealth::Money.new(0,0) - wealth1).to eq(Wealth::Money.new(-1 * wealth1.rupees, -1 * wealth1.paisa))
+    expect(Wealth::Money.new(0,0) - wealth1).to eq(Wealth::Money.new(0, -1 * wealth1.amount_in_paisa))
   end
 
   it "two objects with the same fields have the same hash" do

@@ -1,7 +1,7 @@
- require 'spec_helper'
+require 'spec_helper'
 
 describe Wealth::Money do
-        let(:wealth1) { Wealth::Money.new(123, 45) }
+  let(:wealth1) { Wealth::Money.new(123, 45) }
   let(:wealth2) { Wealth::Money.new(987, 65) }
   let(:wealth3) { Wealth::Money.new(912, 83) }
   let(:wealth1_duplicate) { Wealth::Money.new(wealth1.rupees, wealth1.paisa) }

@@ -1,36 +1,28 @@
 module Wealth
   #manipulates the money in terms of rupees and paisa
   class Money
-    attr_reader :rupees, :paisa
     def initialize(rupees=0, paisa=0)
-      @rupees = rupees.to_i
-      @paisa = paisa.to_i
-      add_overflow_from_paisa_to_rupees
-    end
-
-    def add_overflow_from_paisa_to_rupees
-      @rupees += (@paisa / 100)
-      @paisa %= 100
+      @paisa = paisa.to_i + rupees.to_i * 100
     end
 
     def amount_in_rupees
-      @rupees + (@paisa / 100.0)
+      @paisa / 100.0
     end
 
     def amount_in_paisa
-      (100 * @rupees) + @paisa
+      @paisa
     end 
 
     def +(money)
-      Money.new(@rupees + money.rupees, @paisa + money.paisa)
+      Money.new(0, @paisa + money.amount_in_paisa)
     end
 
     def -(money)
-      Money.new(@rupees - money.rupees, @paisa - money.paisa)
+      Money.new(0, @paisa - money.amount_in_paisa)
     end
 
     def ==(money)
-      self.amount_in_rupees == money.amount_in_rupees
+      self.amount_in_paisa == money.amount_in_paisa
     end
 
     def hash
