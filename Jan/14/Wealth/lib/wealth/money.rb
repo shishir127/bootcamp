@@ -26,7 +26,7 @@ module Wealth
     end
 
     def hash
-      [@rupees, @paisa].hash
+      [@paisa].hash
     end
 
     def to_s
@@ -41,6 +41,22 @@ module Wealth
       else
         1
       end
+    end
+
+    def >(money)
+      self.<=>(money) > 0
+    end
+
+    def <(money)
+      self.<=>(money) < 0
+    end
+
+    def >=(money)
+      self.<=>(money) >= 0
+    end
+
+    def <=(money)
+      self.<=>(money) <= 0
     end
 
   end

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'logger'
 
 describe Wealth::Money do
   let(:wealth1) { Wealth::Money.new(123, 45) }
@@ -92,5 +91,45 @@ describe Wealth::Money do
   it "sorts an array of Money objects" do
     test_array = [wealth1, wealth2, wealth3, wealth1_duplicate, wealth_rogue_input]
     expect(test_array.sort).to eq([wealth1, wealth1_duplicate, wealth_rogue_input, wealth3, wealth2])
+  end
+
+  it "greater than operator returns true when compared to a smaller sum of money" do
+    expect(wealth2 > wealth1).to be true
+  end
+
+  it "greater than operator returns false when compared to a bigger sum of money" do
+    expect(wealth1 > wealth2).to be false
+  end
+
+  it "lesser than operator returns false when compared to a smaller sum of money" do
+    expect(wealth2 < wealth1).to be false
+  end
+
+  it "lesser than operator returns true when compared to a bigger sum of money" do
+    expect(wealth1 < wealth2).to be true
+  end
+
+  it "greater than or equal operator returns true when compared to smaller a sum of money" do
+    expect(wealth2 >= wealth1).to be true
+  end
+
+  it "greater than or equal operator returns true when compared to an equal sum of money" do
+    expect(wealth1 >= wealth1_duplicate).to be true
+  end
+
+  it "greater than or equal operator returns false when compared to a smaller sum of money" do
+    expect(wealth1 >= wealth2).to be false
+  end
+
+  it "lesser than or equal operator returns true when compared to a bigger sum of money" do
+    expect(wealth1 <= wealth2).to be true
+  end
+
+  it "lesser than or equal operator returns true when compared to an equal sum of money" do
+    expect(wealth1 <= wealth1_duplicate).to be true
+  end
+
+  it "lesser than or equal operator returns false when compared to a bigger sum of money" do
+    expect(wealth2 <= wealth1).to be false
   end
 end

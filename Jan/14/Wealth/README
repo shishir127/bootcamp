@@ -1,3 +1,6 @@
 As a fan of wealth,
 I want to model money which can be expressed in Rupees, paise or a combination thereof,
 So that I can sort multiple values of money.
+
+I want to know if one money is greater than or less than another,
+So that I can identify the larger value.
