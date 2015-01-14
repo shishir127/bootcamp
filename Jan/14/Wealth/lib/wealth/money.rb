@@ -1,6 +1,8 @@
 module Wealth
   #manipulates the money in terms of rupees and paisa
   class Money
+
+    include Comparable
     def initialize(rupees=0, paisa=0)
       @paisa = paisa.to_i + rupees.to_i * 100
     end
@@ -34,6 +36,7 @@ module Wealth
     end
 
     def <=>(money)
+      return nil unless money.is_a?(Wealth::Money)
       if @paisa < money.amount_in_paisa
         -1
       elsif @paisa == money.amount_in_paisa
@@ -41,22 +44,6 @@ module Wealth
       else
         1
       end
-    end
-
-    def >(money)
-      self.<=>(money) > 0
-    end
-
-    def <(money)
-      self.<=>(money) < 0
-    end
-
-    def >=(money)
-      self.<=>(money) >= 0
-    end
-
-    def <=(money)
-      self.<=>(money) <= 0
     end
 
   end

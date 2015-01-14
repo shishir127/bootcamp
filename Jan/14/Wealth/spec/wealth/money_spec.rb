@@ -88,6 +88,10 @@ describe Wealth::Money do
     expect(wealth2 <=> wealth1).to eq(1)
   end
 
+  it "comparision operator returns nil when compared to an object that is not Money" do
+    expect(wealth2 <=> 1.0).to eq(nil)
+  end
+
   it "sorts an array of Money objects" do
     test_array = [wealth1, wealth2, wealth3, wealth1_duplicate, wealth_rogue_input]
     expect(test_array.sort).to eq([wealth1, wealth1_duplicate, wealth_rogue_input, wealth3, wealth2])
