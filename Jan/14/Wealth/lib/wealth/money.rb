@@ -32,6 +32,16 @@ module Wealth
     def to_s
       (@paisa / 100).to_s + " rupees, " + (@paisa % 100).to_s + " paisa"
     end
-  
+
+    def <=>(money)
+      if @paisa < money.amount_in_paisa
+        -1
+      elsif @paisa == money.amount_in_paisa
+        0
+      else
+        1
+      end
+    end
+
   end
 end

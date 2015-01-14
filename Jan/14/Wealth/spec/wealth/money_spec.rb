@@ -53,7 +53,7 @@ describe Wealth::Money do
     expect((wealth2 - wealth1).amount_in_rupees).to eq(864.2)
   end
 
-  it "gives a negative amount when a bigger amount is subtracted from a smaller amount" do 
+  it "gives a negative amount when a bigger amount is subtracted from a smaller amount" do
     expect((wealth1 - wealth2).amount_in_rupees).to eq(-864.2)
   end
 
@@ -73,11 +73,24 @@ describe Wealth::Money do
     expect(wealth1.hash).to eq(wealth1_duplicate.hash)
   end
 
-  it "returns sum in rupees in the required format" do
-    expect(wealth1.output_in_rupees).to eq("Sum = Rs. 123.45")
+  it "returns the output in rupees and paisa" do
+    expect(wealth1.to_s).to eq("123 rupees, 45 paisa")
   end
 
-  it "returns sum in paisa in the required format" do
-    expect(wealth1.output_in_paisa).to eq("Sum = 12345 paisa")
+  it "comparision operator returns -1 when compared with a bigger sum of money" do
+    expect(wealth1 <=> wealth2).to eq(-1)
+  end
+
+  it "comparision operator returns 0 when compared to an equal sum of money" do
+    expect(wealth1 <=> wealth1_duplicate).to eq(0)
+  end
+
+  it "comparision operator returns 1 when compared to a greater sum of money" do
+    expect(wealth2 <=> wealth1).to eq(1)
+  end
+
+  it "sorts an array of Money objects" do
+    test_array = [wealth1, wealth2, wealth3, wealth1_duplicate, wealth_rogue_input]
+    expect(test_array.sort).to eq([wealth1, wealth1_duplicate, wealth_rogue_input, wealth3, wealth2])
   end
 end
