@@ -13,16 +13,8 @@ module Geometry
       (@sideA.length + @sideB.length).scale(2)
     end
 
-    def square_millimetre_area
-      @sideA.length.millimetres * @sideB.length.millimetres
-    end
-
-    def square_centimetre_area
-      @sideA.length.centimetres * @sideB.length.centimetres
-    end
-
-    def square_metre_area
-      @sideA.length.metres * @sideB.length.metres
+    def area
+      Geometry::Area.new(@sideA.length, @sideB.length)
     end
   end
 end

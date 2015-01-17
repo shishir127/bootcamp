@@ -11,16 +11,8 @@ describe Geometry::Rectangle do
     expect(rectangle.perimeter.centimetres).to eq(6.0)
   end
 
-  it "calculates the area of the rectangle in square centimetres" do 
-    expect(rectangle.square_centimetre_area).to eq(2.0)
-  end 
-
-  it "calculates the area of the rectangle in square millimetres" do 
-    expect(rectangle.square_millimetre_area).to eq(200.0)
-  end 
-
-  it "calculates the area of the rectangle in square metres" do 
-    expect(rectangle.square_metre_area).to eq(0.0002)
+  it "calculates the area of the rectangle" do 
+    expect(rectangle.area.square_centimetres).to eq(2.0)
   end 
 
   it "calculates the perimeter of the square" do
@@ -28,6 +20,6 @@ describe Geometry::Rectangle do
   end
 
   it "calcualtes the area of the square" do
-    expect(square.square_centimetre_area).to eq(4.0)
+    expect(square.area.square_centimetres).to eq(4.0)
   end
 end
