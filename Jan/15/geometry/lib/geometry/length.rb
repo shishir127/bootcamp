@@ -1,15 +1,15 @@
 module Geometry
   class Length
     def initialize(metres=0, centimetres=0, millimetres=0)
-      @length = (metres * 100 + centimetres) * 10 + millimetres
+      @millimetres = (metres * 100 + centimetres) * 10 + millimetres
     end
 
     def millimetres
-      @length
+      @millimetres
     end
 
     def centimetres
-      @length / 10.0
+      @millimetres / 10.0
     end
 
     def metres
@@ -17,19 +17,19 @@ module Geometry
     end
 
     def ==(length)
-      @length == length.millimetres
+      @millimetres == length.millimetres
     end
 
     def hash
-      [@length].hash
+      [@millimetres].hash
     end
 
     def +(length)
-      Geometry::Length.new(0, 0, @length + length.millimetres)
+      Geometry::Length.new(0, 0, @millimetres + length.millimetres)
     end
 
     def scale(scalar)
-      Geometry::Length.new(0, 0, scalar * @length)
+      Geometry::Length.new(0, 0, scalar * @millimetres)
     end
   end
 end
