@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-03T18:39:21+05:30">2015-02-03T18:39:21+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-03T19:08:35+05:30">2015-02-03T19:08:35+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.46
+         2.15
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>2</b> files in total.
-    <b>14</b> relevant lines. 
-    <span class="green"><b>14</b> lines covered</span> and
+    <b>4</b> files in total.
+    <b>41</b> relevant lines. 
+    <span class="green"><b>41</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#b3a674e73d7eb58134d2efda0e27caec4eadfde7" class="src_link" title="lib/application.rb">lib/application.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -67,7 +67,27 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>2.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#5cd210fce46d3dfc3ecde693fe3a6393c17cd0f1" class="src_link" title="lib/application/parser.rb">lib/application/parser.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>20</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>3.2</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#a9400ca4d93127f458bd65f368e83eba2b9b4dbe" class="src_link" title="spec/application/parser_spec.rb">spec/application/parser_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>31</td>
+        <td>15</td>
+        <td>15</td>
+        <td>0</td>
+        <td>1.4</td>
       </tr>
       
     </tbody>
@@ -91,8 +111,8 @@
     <h3>lib/application.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>1</b> relevant lines. 
-      <span class="green"><b>1</b> lines covered</span> and
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -104,6 +124,12 @@
           <span class="hits">1</span>
           
           <code class="ruby">require &#39;application/calculator&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;application/parser&#39;</code>
         </li>
       
     </ol>
@@ -142,8 +168,8 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="4">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="12" data-linenumber="4">
+          <span class="hits">12</span>
           
           <code class="ruby">    @number = 0</code>
         </li>
@@ -166,8 +192,8 @@
           <code class="ruby">  def add(a)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
           
           <code class="ruby">    @number += a</code>
         </li>
@@ -190,8 +216,8 @@
           <code class="ruby">  def subtract(a)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
           
           <code class="ruby">    @number -= a</code>
         </li>
@@ -214,8 +240,8 @@
           <code class="ruby">  def multiply(a)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
           
           <code class="ruby">    @number *= a</code>
         </li>
@@ -238,8 +264,8 @@
           <code class="ruby">  def divide(a)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">    @number /= a</code>
         </li>
@@ -262,8 +288,8 @@
           <code class="ruby">  def cancel</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
           
           <code class="ruby">    @number = 0</code>
         </li>
@@ -281,6 +307,348 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="5cd210fce46d3dfc3ecde693fe3a6393c17cd0f1">
+  <div class="header">
+    <h3>lib/application/parser.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Parser</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(object)</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="4">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    @object = object</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def parse(input_string)</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    input_components = input_string.split(&quot; &quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    # p input_components[0].to_sym</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="10">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    begin</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="11">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      if (input_components[0] == &quot;cancel&quot; || input_components[0] == &quot;exit&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @object.send(input_components[0].to_sym)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="14">
+          <span class="hits">5</span>
+          
+          <code class="ruby">        @object.send(input_components[0].to_sym, input_components[1].to_f)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    rescue Exception =&gt; e</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      &quot;Invalid input&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="a9400ca4d93127f458bd65f368e83eba2b9b4dbe">
+  <div class="header">
+    <h3>spec/application/parser_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;spec_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe Parser do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="5">
+          <span class="hits">7</span>
+          
+          <code class="ruby">  let(:parser) { Parser.new(Calculator.new()) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;should parse the add command&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(parser.parse(&quot;add 5&quot;)).to eq(5)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;should parse the subtract command&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(parser.parse(&quot;subtract 5&quot;)).to eq(-5)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;should parse the multiply command&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(parser.parse(&quot;multiply 5&quot;)).to eq(0)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;should parse the divide command&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(parser.parse(&quot;divide 5&quot;)).to eq(0)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;should parse the cancel command&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(parser.parse(&quot;cancel&quot;)).to eq(0)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;should not parse an invalid command&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(parser.parse(&quot;adsfasd&quot;)).to eq(&quot;Invalid input&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">end</code>
