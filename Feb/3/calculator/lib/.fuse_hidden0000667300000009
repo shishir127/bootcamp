@@ -1,0 +1,6 @@
+require 'application/calculator'
+require 'application/parser'
+require 'application/console_io'
+require 'application/command_builder'
+require 'application/commands/add_command'
+require 'application/commands/subtract_command'

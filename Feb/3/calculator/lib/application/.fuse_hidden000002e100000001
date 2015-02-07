@@ -1,0 +1,45 @@
+class Controller
+
+  attr_reader :calculator, :history
+
+  def initialize
+    @calculator = Calculator.new()
+    @history = History.new()
+  end
+
+  def parse_and_execute(input_string)
+    input_components = input_string.split
+    x = build_command(input_string[0], input_string[1].to_f)
+    puts "command returned #{x}"
+    x.execute(@history)
+  end
+
+  def build_command(command, arg = nil)
+    command_object = nil
+    if command == "add"
+      command_object = AddCommand.new(arg, @calculator)
+    elsif command == "subtract"
+      SubtractCommand.new(arg, @calculator)
+    elsif command == "multiply"
+      MultiplyCommand.new(arg, @calculator)
+    elsif command == "divide"
+      DivideCommand.new(arg, @calculator)
+    elsif command == "negative"
+      NegativeCommand.new()
+    elsif command == "absolute"
+      AbsoluteCommand.new()
+    elsif command == "square"
+      SquareCommand.new()
+    elsif command == "sqrt"
+      SquareRootCommand.new(arg)
+    elsif command == "cube"
+      CubeCommand.new(arg)
+    elsif command == "cbrt"
+      CubeRootCommand.new(arg, @calculator)
+    elsif command == "repeat"
+      RepeatCommand.new(arg, @player)
+    end
+    return command_object
+  end
+
+end

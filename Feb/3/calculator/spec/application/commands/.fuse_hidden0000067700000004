@@ -1,0 +1,13 @@
+require 'spec_helper'
+
+describe RepeatCommand do
+
+  let(:calc) { Calculator.new() }
+  let(:command) { RepeatCommand.new(5, calc) }
+
+  it "should execute addition on the object passed" do
+    calc.add(5)
+    expect(command.execute(History.new())).to eq([10])
+  end
+
+end

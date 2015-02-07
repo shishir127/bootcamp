@@ -1,0 +1,16 @@
+require 'spec_helper'
+
+describe Player do
+
+  let(:player) { Player.new() }
+
+  it "should record objects" do
+    player.record("hello")
+    player.record("world")
+    expect(player.stack.join(" ")).to eq("hello world")
+  end
+
+  it "should execute objects on the stack" do
+  end
+
+end

@@ -1,0 +1,14 @@
+class ConsoleIO
+
+  def initialize(controller)
+    @controller = controller
+  end
+
+  def start_IO_loop
+    while true do
+      input_string = gets.chomp
+      puts @controller.parse(input_string)
+    end
+  end
+
+end

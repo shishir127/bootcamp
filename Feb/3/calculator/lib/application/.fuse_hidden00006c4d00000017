@@ -1,0 +1,14 @@
+class Player
+
+  attr_reader :stack
+
+  def initialize
+    @stack = []
+  end
+
+  def record(object)
+    @stack << object
+  end
+
+
+end

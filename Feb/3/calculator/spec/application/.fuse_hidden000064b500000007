@@ -28,6 +28,12 @@ describe Calculator do
     expect(calculator.cancel).to eq(0)
   end
 
+  it "should exit the program" do
+    allow(Calculator).to receive(:abort)
+    calculator.exit
+    expect(Calculator).to have_received(:abort)
+  end
+
   it "should negate the current value" do
     calculator.add(5)
     expect(calculator.negative).to eq(-5)
@@ -54,8 +60,8 @@ describe Calculator do
   end
 
   it "should return cube root of current value" do
-    calculator.add(27)
-    expect(calculator.cbrt).to eq(3)
+    calculator.subtract(27)
+    expect(calculator.cube_root).to eq(3)
   end
 
 end

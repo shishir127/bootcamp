@@ -1,0 +1,8 @@
+#! /home/shishir/.rbenv/shims/ruby
+
+$LOAD_PATH.unshift("#{File.dirname(__FILE__)}/../lib")
+require 'application'
+
+calculator_model = Calculator.new()
+console = ConsoleIO.new(Dispatcher.new(), calculator_model)
+console.start_IO_loop

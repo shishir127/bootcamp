@@ -1,5 +1,6 @@
 require 'application/calculator'
+require 'application/parser'
 require 'application/console_io'
+require 'application/command_builder'
 require 'application/commands'
-require 'application/history'
-require 'application/dispatcher'
+require 'application/player'

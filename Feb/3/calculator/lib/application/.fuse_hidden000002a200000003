@@ -1,0 +1,46 @@
+class View
+
+  def initialize(controller, model)
+    @controller = controller
+    @model = model
+  end
+
+  def start_IO_loop
+    while true do
+      print "$ "
+      input_string = gets.chomp
+      puts @controller.parse_and_execute(input_string) unless input_string == ""
+    end
+  end
+
+  def build_command(command, arg = nil)
+    if command == "add"
+      AddCommand.new(arg, @model)
+    elsif command == "subtract"
+      SubtractCommand.new(arg, @model)
+    elsif command == "multiply"
+      MultiplyCommand.new(arg, @model)
+    elsif command == "divide"
+      DivideCommand.new(arg, @model)
+    elsif command == "negative"
+      NegativeCommand.new(arg, @model)
+    elsif command == "absolute"
+      AbsoluteCommand.new(arg, @model)
+    elsif command == "square"
+      SquareCommand.new(arg, @model)
+    elsif command == "sqrt"
+      SqrtCommand.new(arg, @model)
+    elsif command == "cube"
+      CubeCommand.new(arg, @model)
+    elsif command == "cbrt"
+      CbrtCommand.new(arg, @model)
+    elsif command == "repeat"
+      RepeatCommand.new(arg)
+    elsif command == "cancel"
+      CancelCommand.new(arg, @model)      
+    elsif command == "exit"
+      ExitCommand.new(arg, Kernel)
+    end
+  end
+
+end
