@@ -1,0 +1,9 @@
+#! /Users/shishir/.rbenv/shims/ruby
+
+$LOAD_PATH.unshift("#{File.dirname(__FILE__)}/../lib")
+require 'app'
+
+calculator = Calculator.new()
+dispatcher = Dispatcher.new(calculator)
+ui = CalculatorGUI.new()
+ui.dispatcher = dispatcher

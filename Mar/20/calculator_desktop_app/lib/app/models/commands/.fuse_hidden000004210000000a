@@ -1,0 +1,7 @@
+class SquareCommand < Command
+
+  def execute(history = nil)
+    history.record(self) unless history.nil?
+    @target.square
+  end
+end

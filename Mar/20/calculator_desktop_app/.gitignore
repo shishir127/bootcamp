@@ -1,0 +1,7 @@
+#OSX files
+.DS_Store
+
+#Sublime text files
+*.sublime-project
+*.sublime-workspace
+*.tags
