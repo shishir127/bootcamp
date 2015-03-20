@@ -1,0 +1,51 @@
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.rails.js" %>
+<%= stylesheet_link_tag "application" %>
+
+<div>
+  <div class="display normal-padding">
+    <h3> Operand </h3>
+    <p class="operand"> 0 </p>
+    <h3> Result </h3>
+    <p class="result"> <%= @calculator.number %> </p>
+  </div>
+
+  <div class="normal-padding">
+    <div class="numpad inline-block">
+      <div class="numpad-row">
+        <button type="button" class="numpad-button" onclick="test(this,1)">1</button>
+        <button type="button" class="numpad-button" onclick="test(this,2)">2</button>
+        <button type="button" class="numpad-button" onclick="test(this,3)">3</button>
+      </div>
+      <div class="numpad-row">
+        <button type="button" class="numpad-button" onclick="test(this,4)">4</button>
+        <button type="button" class="numpad-button" onclick="test(this,5)">5</button>
+        <button type="button" class="numpad-button" onclick="test(this,6)">6</button>
+      </div>
+      <div class="numpad-row">
+        <button type="button" class="numpad-button" onclick="test(this,7)">7</button>
+        <button type="button" class="numpad-button" onclick="test(this,8)">8</button>
+        <button type="button" class="numpad-button" onclick="test(this,9)">9</button>
+      </div>
+      <div class="numpad-row align-center">
+        <button type="button" class="numpad-button" onclick="test(this,0)">0</button>
+      </div>
+      <div class="numpad-row align-center">
+        <button type="button" class="numpad-button" onclick="backspace(this)">Backspace</button>
+      </div>
+    </div>
+
+    <div class="operations inline-block align-center">
+      <%= button_to "+", action: "execute", operation: "add", operand: "1" %>
+      <%= button_to "-", action: "execute", operation: "subtract", operand: "1" %>
+      <%= button_to "/", action: "execute", operation: "divide", operand: "1" %>
+      <%= button_to "*", action: "execute", operation: "multiply", operand: "1" %>
+      <%= button_to "C", action: "execute", operation: "cancel", operand: "1" %>
+      <%= button_to "negate", action: "execute", operation: "negative", operand: "1" %>
+      <%= button_to "square", action: "execute", operation: "square", operand: "1" %>
+      <%= button_to "square root", action: "execute", operation: "sqrt", operand: "1" %>
+      <%= button_to "cube", action: "execute", operation: "cube", operand: "1" %>
+      <%= button_to "cube root", action: "execute", operation: "cbrt", operand: "1" %>
+      <%= button_to "repeat", action: "execute", operation: "repeat", operand: "1" %>
+    </div>
+  </div>
+</div>

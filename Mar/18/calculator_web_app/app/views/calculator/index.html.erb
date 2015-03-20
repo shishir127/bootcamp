@@ -1,0 +1,91 @@
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.rails.js" %>
+<%= stylesheet_link_tag "application" %>
+
+
+ <h1> <%= @calculator.object_id %> </h1>
+<div>
+  <div class="display normal-padding">
+    <h3> Operand </h3>
+    <p class="operand">0</p>
+    <h3> Result </h3>
+    <p class="result"> <%= @calculator.number %> </p>
+  </div>
+
+  <div class="normal-padding">
+    <div class="numpad inline-block">
+      <div class="numpad-row">
+        <button type="button" class="numpad-button" onclick="appendNumber(this,1)">1</button>
+        <button type="button" class="numpad-button" onclick="appendNumber(this,2)">2</button>
+        <button type="button" class="numpad-button" onclick="appendNumber(this,3)">3</button>
+      </div>
+      <div class="numpad-row">
+        <button type="button" class="numpad-button" onclick="appendNumber(this,4)">4</button>
+        <button type="button" class="numpad-button" onclick="appendNumber(this,5)">5</button>
+        <button type="button" class="numpad-button" onclick="appendNumber(this,6)">6</button>
+      </div>
+      <div class="numpad-row">
+        <button type="button" class="numpad-button" onclick="appendNumber(this,7)">7</button>
+        <button type="button" class="numpad-button" onclick="appendNumber(this,8)">8</button>
+        <button type="button" class="numpad-button" onclick="appendNumber(this,9)">9</button>
+      </div>
+      <div class="numpad-row align-center">
+        <button type="button" class="numpad-button" onclick="appendNumber(this,0)">0</button>
+      </div>
+      <div class="numpad-row align-center">
+        <button type="button" class="numpad-button" onclick="backspace(this)">Backspace</button>
+      </div>
+    </div>
+
+    <div class="operations inline-block align-center">
+
+      <%= form_tag "/execute", {class: "add-form"} do%>
+        <%= submit_tag "add", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "subtract-form"} do%>
+        <%= submit_tag "subtract", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "divide-form"} do%>
+        <%= submit_tag "divide", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "multiply-form"} do%>
+        <%= submit_tag "multiply", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "cancel-form"} do%>
+        <%= submit_tag "cancel", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "negate-form"} do%>
+        <%= submit_tag "negate", onclick: "submit_tag(this)"%>
+      <% end %>
+
+       <%= form_tag "/execute", {class: "absolute-form"} do%>
+        <%= submit_tag "absolute", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "square-form"} do%>
+        <%= submit_tag "square", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "sqrt-form"} do%>
+        <%= submit_tag "sqrt", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "cube-form"} do%>
+        <%= submit_tag "cube", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "cbrt-form"} do%>
+        <%= submit_tag "cbrt", onclick: "submit_tag(this)"%>
+      <% end %>
+
+      <%= form_tag "/execute", {class: "repeat-form"} do%>
+        <%= submit_tag "repeat", onclick: "submit_tag(this)"%>
+      <% end %>
+
+    </div>
+  </div>
+</div>

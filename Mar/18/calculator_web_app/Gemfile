@@ -44,5 +44,10 @@ group :development, :test do
 
   # Rspec for tests
   gem 'rspec-rails'
+
+  #testing javascript
+  gem 'jasmine'
+
+  gem 'jslint_on_rails'
 end
 

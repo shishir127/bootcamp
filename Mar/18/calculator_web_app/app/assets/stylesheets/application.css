@@ -32,3 +32,9 @@
 .display{
   border: 5px solid black;
 }
+
+.align-center{
+  text-align: center;
+  padding-left: auto;
+  padding-right: auto;
+}
