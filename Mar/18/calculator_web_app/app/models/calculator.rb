@@ -1,53 +1,53 @@
 class Calculator 
 
-  attr_reader :number
-
-  def initialize
-    @number = 0
-  end
+  @@number = 0
 
   def add(a)
-    @number += a
+    @@number += a
   end
 
   def subtract(a)
-    @number -= a
+    @@number -= a
   end
 
   def multiply(a)
-    @number *= a
+    @@number *= a
   end
 
   def divide(a)
-    @number /= a
+    @@number /= a
   end
 
   def cancel
-    @number = 0
+    @@number = 0
   end
   
   def absolute
-    @number = @number.abs
+    @@number = @@number.abs
   end
 
   def negative
-    @number *= -1
+    @@number *= -1
   end
 
   def square
-    @number = @number ** 2
+    @@number = @@number ** 2
   end
 
   def sqrt
-    @number = @number ** 0.5
+    @@number = @@number ** 0.5
   end
 
   def cube
-    @number = @number ** 3
+    @@number = @@number ** 3
   end
 
   def cbrt
-    @number = @number ** (1.0/3.0)
+    @@number = @@number ** (1.0/3.0)
+  end
+
+  def number
+    @@number
   end
 
 end

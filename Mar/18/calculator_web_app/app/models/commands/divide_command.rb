@@ -4,4 +4,8 @@ class Commands::DivideCommand < Commands::Command
     @target.divide(@arg)
   end
 
+  def to_s()
+    "divide"
+  end
+
 end

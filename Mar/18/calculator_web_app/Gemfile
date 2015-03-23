@@ -49,5 +49,5 @@ group :development, :test do
   gem 'jasmine'
 
   gem 'jslint_on_rails'
+  
 end
-

@@ -4,4 +4,8 @@ class Commands::CbrtCommand < Commands::Command
     @target.cbrt()
   end
 
+  def to_s()
+    "cbrt"
+  end
+
 end

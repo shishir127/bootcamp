@@ -4,4 +4,8 @@ class Commands::SqrtCommand < Commands::Command
     @target.sqrt()
   end
 
+  def to_s()
+    "sqrt"
+  end
+
 end

@@ -2,11 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Commands::AddCommand, type: :model do
 
-  let(:history) { History.new() }
-  let(:command) { Commands::AddCommand.new(5, Calculator.new(), history) }
+  let(:calculator) {  Calculator.new() }
+  let(:command) { Commands::AddCommand.new(5, calculator) }
 
   it "should execute addition on the object passed" do
-    expect(command.record_and_execute()).to eq(5)
+    calculator.cancel()
+    expect(command.execute()).to eq(5)
+  end
+
+  it "should return the name of the command" do
+    expect(command.to_s).to eq("add")
   end
 
 end

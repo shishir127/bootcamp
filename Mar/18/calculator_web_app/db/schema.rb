@@ -11,6 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150323071448) do
+
+  create_table "history", force: :cascade do |t|
+    t.string "command"
+  end
 
 end

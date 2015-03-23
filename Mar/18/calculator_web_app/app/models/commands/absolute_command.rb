@@ -4,4 +4,8 @@ class Commands::AbsoluteCommand < Commands::Command
     @target.absolute()
   end
 
+  def to_s()
+    "absolute"
+  end
+
 end

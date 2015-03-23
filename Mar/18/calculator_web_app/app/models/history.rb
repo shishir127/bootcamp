@@ -1,17 +1,11 @@
-class History
+class History < ActiveRecord::Base
 
-  attr_reader :stack
+  self.table_name = "history"
 
-  def initialize
-    @stack = []
-  end
+  validates :command, presence: true
 
-  def record(object)
-    @stack << object
-  end
-
-  def get_last_n_operations(n)
-    @stack[Range.new(-1 * n, -1)]
+  def self.get_last_n_operations(n)
+    History.last(n)
   end
 
 end

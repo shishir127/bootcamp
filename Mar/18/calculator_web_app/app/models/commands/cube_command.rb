@@ -4,4 +4,8 @@ class Commands::CubeCommand < Commands::Command
    @target.cube()
   end
 
+  def to_s()
+    "cube"
+  end
+
 end

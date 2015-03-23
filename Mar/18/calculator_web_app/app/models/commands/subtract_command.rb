@@ -4,4 +4,8 @@ class Commands::SubtractCommand < Commands::Command
     @target.subtract(@arg)
   end
 
+  def to_s()
+    "subtract"
+  end
+
 end

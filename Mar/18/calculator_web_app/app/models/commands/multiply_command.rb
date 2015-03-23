@@ -4,4 +4,8 @@ class Commands::MultiplyCommand < Commands::Command
     @target.multiply(@arg)
   end
 
+  def to_s()
+    "multiply"
+  end
+
 end

@@ -2,10 +2,17 @@ require 'rails_helper'
 
 describe Commands::SquareCommand do
 
-  let(:command) { Commands::SquareCommand.new(5, Calculator.new(), History.new()) }
+  let(:calculator) { Calculator.new() }
+  let(:command) { Commands::SquareCommand.new(5, calculator) }
 
-  it "should execute addition on the object passed" do
-    expect(command.execute()).to eq(0)
+  it "should square the existing number" do
+    calculator.cancel()
+    Commands::AddCommand.new(5, calculator).execute()
+    expect(command.execute()).to eq(25)
+  end
+
+  it "should return the name of the command as a string" do
+    expect(command.to_s).to eq("square")
   end
 
 end

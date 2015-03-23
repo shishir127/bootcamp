@@ -10,8 +10,13 @@ RSpec.describe Dispatcher, type: :model do
   end
 
   it "should parse and execute the add command" do
+    calculator.cancel()
     controller.parse_and_execute("add", "5")
     expect(calculator.number).to eq(5)
+  end
+
+  it "should parse and execute the add command and add the command to history" do
+    expect{controller.parse_and_record_and_execute("add", "5")}.to change(History, :count).by(1)
   end
 
 end

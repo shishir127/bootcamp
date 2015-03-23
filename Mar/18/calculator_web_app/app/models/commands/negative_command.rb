@@ -4,4 +4,8 @@ class Commands::NegativeCommand < Commands::Command
     @target.negative()
   end
 
+  def to_s()
+    "negative"
+  end
+
 end

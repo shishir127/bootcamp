@@ -4,4 +4,8 @@ class Commands::SquareCommand < Commands::Command
     @target.square()
   end
 
+  def to_s()
+    "square"
+  end
+
 end

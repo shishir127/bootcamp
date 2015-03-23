@@ -8,4 +8,8 @@ class Commands::CancelCommand < Commands::Command
     @target.cancel()
   end
 
+  def to_s()
+    "cancel"
+  end
+
 end

@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe Commands::NullCommand, type: :model do
 
   let(:calculator) { Calculator.new() }
-  let(:history) { History.new() }
-  let(:command) { Commands::NullCommand.new("blah", calculator, history) }
+  let(:command) { Commands::NullCommand.new("blah", calculator) }
 
   it "should not change the input object's state" do
     state = calculator.number
@@ -13,9 +12,11 @@ RSpec.describe Commands::NullCommand, type: :model do
   end
 
   it "should not register in history" do
-    state = history.stack
-    command.record_and_execute()
-    expect(history.stack).to eq(state)
+    expect{command.record_and_execute()}.to change(History, :count).by(0)
+  end
+
+  it "should return the name of the command as a string" do
+    expect(command.to_s).to eq("null")
   end
 
 end
